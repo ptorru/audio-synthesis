@@ -15,7 +15,8 @@ amplitude = np.iinfo(np.int16).max
 
 wave1 = 0.5 * amplitude * np.sin(2. * np.pi * fs * tsynth)
 wave2 = 0.5 * amplitude * np.sin(2. * np.pi * fs/2 * tsynth)
-bass = 0.5 * amplitude * np.sin(2. * np.pi * 90 * tsynth) * signal.square(2 * np.pi * 6 * tsynth)
+mod = signal.square(2 * np.pi * 1 * tsynth) + 1
+bass = 0.5 * amplitude * np.sin(2. * np.pi * 90 * tsynth) * mod
 
 
 wave3 = wave1 + wave2 + bass
